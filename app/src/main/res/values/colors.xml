@@ -6,4 +6,5 @@
     <color name="colorTransBg">#26000000</color>
     <color name="colorGreenLight">#00BF9A</color>
     <color name="colorGreenDark">#008975</color>
+    <color name="colorGrayLight">#E0E0E0</color>
 </resources>
