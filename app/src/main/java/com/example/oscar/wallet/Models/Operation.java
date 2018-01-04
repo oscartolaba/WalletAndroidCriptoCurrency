@@ -1,4 +1,4 @@
-package com.example.oscar.wallet.DB.Domain;
+package com.example.oscar.wallet.Models;
 
 import java.math.BigDecimal;
 import java.util.Date;

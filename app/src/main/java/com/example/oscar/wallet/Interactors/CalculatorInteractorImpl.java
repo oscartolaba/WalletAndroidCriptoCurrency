@@ -1,7 +1,9 @@
 package com.example.oscar.wallet.Interactors;
 
-import com.example.oscar.wallet.Interfaces.CalculatorInteractor;
-import com.example.oscar.wallet.Interfaces.OnListenerFinishCalculator;
+import com.example.oscar.wallet.Interfaces.InterfacesInteractors.CalculatorInteractor;
+import com.example.oscar.wallet.Interfaces.InterfacesListeners.OnListenerFinishCalculator;
+
+import java.math.BigDecimal;
 
 
 /**
@@ -28,8 +30,8 @@ public class CalculatorInteractorImpl  implements CalculatorInteractor{
     public void addOperatorToExpresion(String operator) {
         if(!isOperatorLast() && !isPointLast() && !expression.isEmpty()){
             expression+=operator;
+            listener.setExpressionValid(expression);
         }
-        listener.setExpressionValid(expression);
     }
 
     @Override
@@ -38,20 +40,17 @@ public class CalculatorInteractorImpl  implements CalculatorInteractor{
         if(!isPointLast() && !isOperatorLast() && !expression.isEmpty())
         {
             expression+=point;
+            listener.setExpressionValid(expression);
         }
-        else
-        {
-            listener.setExpressionError();
-        }
-        listener.setExpressionValid(expression);
     }
 
     private boolean isPointLast(){
 
-        String lastValue= expression.substring(expression.length()-1);
+        if(!expression.isEmpty()) {
+            String lastValue = expression.substring(expression.length() - 1);
             if (lastValue.equals("."))
-              return true;
-
+                return true;
+        }
         return false;
     }
 
@@ -73,17 +72,23 @@ public class CalculatorInteractorImpl  implements CalculatorInteractor{
          if(!expression.isEmpty() && !isOperatorLast()){
              expression = operar(expression);
              listener.setExpressionValid(expression);
-         }else {
+         }
+         else
+         {
               listener.setExpressionError();
          }
     }
 
     @Override
     public void deleteExpressionValue() {
-        if(!expression.isEmpty())
-            expression= expression.substring(0,expression.length()-1);
+        try {
 
-        listener.setExpressionValid(expression);
+        if(!expression.isEmpty()){
+            expression= expression.substring(0,expression.length()-1);
+           listener.setExpressionValid(expression);
+       }}catch(Exception ex){
+            listener.setExpressionError();
+        }
     }
 
     private String operar(String expresion){
@@ -133,10 +138,10 @@ public class CalculatorInteractorImpl  implements CalculatorInteractor{
         String resultado="";
         switch (operador)
         {
-            case "/": resultado=String.valueOf(Float.parseFloat(a)/Float.parseFloat(b));break;
-            case "*": resultado=String.valueOf(Float.parseFloat(a)*Float.parseFloat(b));break;
-            case "-": resultado=String.valueOf(Float.parseFloat(a)-Float.parseFloat(b));break;
-            case "+": resultado=String.valueOf(Float.parseFloat(a)+Float.parseFloat(b));break;
+            case "/": resultado=String.valueOf(new BigDecimal(a).divide(new BigDecimal(b)));break;
+            case "*": resultado=String.valueOf(new BigDecimal(a).multiply(new BigDecimal(b)));break;
+            case "-": resultado=String.valueOf(new BigDecimal(a).subtract(new BigDecimal(b)));break;
+            case "+": resultado=String.valueOf(new BigDecimal(a).add(new BigDecimal(b)));break;
         }
         return resultado;
     }

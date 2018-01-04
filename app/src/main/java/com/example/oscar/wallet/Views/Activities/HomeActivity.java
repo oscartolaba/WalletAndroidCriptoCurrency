@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
-import com.example.oscar.wallet.Interfaces.OnClickOverviewListener;
+import com.example.oscar.wallet.Interfaces.InterfacesListeners.OnClickOverviewListener;
 import com.example.oscar.wallet.R;
 
 
@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                startActivity(new Intent(getApplicationContext(),AccountNewActivity.class));
             }
         });}
 
@@ -135,15 +135,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_account) {
+            startActivity(new Intent(this, AccountListActivity.class));
+        }
+        else if (id == R.id.nav_category) {
+            startActivity(new Intent(this, CategoryActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        } else
+          if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 

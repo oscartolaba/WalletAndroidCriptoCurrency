@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigate_account(View v){
-        startActivity(new Intent(this,AccountActivity.class));
+        startActivity(new Intent(this,AccountNewActivity.class));
     }
 
     public void navigate_incoming(View v){

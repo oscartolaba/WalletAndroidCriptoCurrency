@@ -1,4 +1,4 @@
-package com.example.oscar.wallet.Adapters;
+package com.example.oscar.wallet.Views.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

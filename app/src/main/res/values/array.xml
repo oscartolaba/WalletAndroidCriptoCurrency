@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="type_accounts">
-        <item>Cuenta Corriente</item>
-        <item>Billete</item>
-        <item>Ahorro</item>
+    <string-array name="categories_expense">
+        <item>Alimentacion</item>
+        <item>Educacion</item>
+        <item>Hogar</item>
+        <item>Facturas</item>
+        <item>Salud</item>
+        <item>Transporte</item>
+        <item>Reajuste</item>
+        <item>Ropa</item>
+        <item>Transporte</item>
+    </string-array>
+    <string-array name="categories_incoming">
         <item>Inversiones</item>
         <item>Otros</item>
+        <item>Premios</item>
+        <item>Reajuste</item>
+        <item>Salario</item>
+        <item>Regalos</item>
     </string-array>
 </resources>

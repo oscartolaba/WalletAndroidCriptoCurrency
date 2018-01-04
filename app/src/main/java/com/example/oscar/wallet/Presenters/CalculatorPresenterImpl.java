@@ -1,10 +1,10 @@
 package com.example.oscar.wallet.Presenters;
 
 import com.example.oscar.wallet.Interactors.CalculatorInteractorImpl;
-import com.example.oscar.wallet.Interfaces.CalculatorInteractor;
-import com.example.oscar.wallet.Interfaces.CalculatorPresenter;
-import com.example.oscar.wallet.Interfaces.CalculatorView;
-import com.example.oscar.wallet.Interfaces.OnListenerFinishCalculator;
+import com.example.oscar.wallet.Interfaces.InterfacesInteractors.CalculatorInteractor;
+import com.example.oscar.wallet.Interfaces.InterfacesPresenters.CalculatorPresenter;
+import com.example.oscar.wallet.Interfaces.InterfacesViews.CalculatorView;
+import com.example.oscar.wallet.Interfaces.InterfacesListeners.OnListenerFinishCalculator;
 
 /**
  * Created by oscar on 8/12/2017.
@@ -65,5 +65,10 @@ public class CalculatorPresenterImpl  implements  CalculatorPresenter, OnListene
         if(view!= null){
             view.setErrorOutPut();
         }
+    }
+
+    @Override
+    public void operationSuccesfull() {
+
     }
 }

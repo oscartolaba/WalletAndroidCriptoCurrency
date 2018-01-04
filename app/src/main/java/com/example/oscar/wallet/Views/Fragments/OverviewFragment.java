@@ -1,34 +1,21 @@
 package com.example.oscar.wallet.Views.Fragments;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.oscar.wallet.Adapters.ItemOverviewAdapter;
-import com.example.oscar.wallet.Adapters.Overview;
-import com.example.oscar.wallet.Adapters.OverviewAdapter;
-import com.example.oscar.wallet.Interfaces.OnClickOverviewListener;
+import com.example.oscar.wallet.Views.Adapters.ItemOverviewAdapter;
+import com.example.oscar.wallet.Views.Adapters.Overview;
 import com.example.oscar.wallet.R;
 import com.example.oscar.wallet.Views.Activities.IncomeActivity;
 
 import java.util.ArrayList;
-import java.util.function.ToLongBiFunction;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.

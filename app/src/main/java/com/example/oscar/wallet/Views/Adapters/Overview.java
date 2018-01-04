@@ -1,6 +1,4 @@
-package com.example.oscar.wallet.Adapters;
-
-import java.math.BigDecimal;
+package com.example.oscar.wallet.Views.Adapters;
 
 /**
  * Created by oscar on 14/12/2017.

@@ -1,4 +1,4 @@
-package com.example.oscar.wallet.Interfaces;
+package com.example.oscar.wallet.Interfaces.InterfacesPresenters;
 
 /**
  * Created by oscar on 8/12/2017.

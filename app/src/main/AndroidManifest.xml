@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.oscar.wallet">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".Views.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,8 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Views.Activities.AccountActivity"
-            android:label="@string/title_activity_operation"
+            android:name=".Views.Activities.AccountNewActivity"
+            android:label="@string/title_activity_account"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Views.Activities.IncomingActivity"
@@ -31,7 +34,15 @@
         <activity
             android:name=".Views.Activities.IncomeActivity"
             android:label="@string/title_activity_income"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.Activities.AccountListActivity"
+            android:label="@string/title_activity_list_accounts"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.Activities.CategoryActivity"
+            android:label="@string/title_activity_category"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
